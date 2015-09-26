@@ -7,49 +7,67 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="oled_cleardisplay" id="85">
+      <block type="movement_forward" id="380">
         <next>
-          <block type="oled_setcursor" id="101" inline="true">
-            <value name="STARTX">
-              <block type="math_number" id="114">
-                <field name="NUM">10</field>
-              </block>
-            </value>
-            <value name="STARTY">
-              <block type="math_number" id="117">
-                <field name="NUM">10</field>
-              </block>
-            </value>
-            <next>
-              <block type="oled_drawtext" id="131">
-                <field name="TEXT">LeftFront</field>
-                <next>
-                  <block type="oled_drawnumber" id="162" inline="true">
-                    <value name="NUMBER">
-                      <block type="sensor_object" id="177">
-                        <field name="OBJECT">LEFTFRONT</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="controls_if" id="211" inline="false">
-                        <next>
-                          <block type="robot_delay" id="194" inline="true">
-                            <value name="DELAY">
-                              <block type="math_number" id="195">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
+          <block type="controls_if" id="211" inline="false">
+            <value name="IF0">
+              <block type="logic_compare" id="227" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="sensor_object" id="327">
+                    <field name="OBJECT">LEFTFRONT</field>
                   </block>
-                </next>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="541">
+                    <field name="NUM">80</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="movement_reverse" id="603"></block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="robot_delay" id="194" inline="true" disabled="true" x="242" y="300">
+    <value name="DELAY">
+      <block type="math_number" id="195">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  <block type="oled_cleardisplay" id="85" disabled="true" x="8" y="349">
+    <next>
+      <block type="oled_setcursor" id="101" inline="true" disabled="true">
+        <value name="STARTX">
+          <block type="math_number" id="114">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="STARTY">
+          <block type="math_number" id="117">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <next>
+          <block type="oled_drawtext" id="131" disabled="true">
+            <field name="TEXT">LeftFront</field>
+            <next>
+              <block type="oled_drawnumber" id="162" inline="true" disabled="true">
+                <value name="NUMBER">
+                  <block type="sensor_object" id="177">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
               </block>
             </next>
           </block>
         </next>
       </block>
-    </statement>
+    </next>
   </block>
 </xml>
