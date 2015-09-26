@@ -1,7 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="sensor_button" id="2" x="138" y="37">
-    <field name="OBJECT">ENTER</field>
-  </block>
   <block type="controls_whileUntil" id="1" inline="false" x="-10" y="148">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
